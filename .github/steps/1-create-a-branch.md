@@ -55,7 +55,34 @@ GitHub shows your profile README at the top of your profile page. For more infor
 <details>
 <summary>Having trouble? 🤷</summary><br/>
 
-If you don't get feedback, here are some things to check:
-- Make sure your created the branch with the exact name `my-first-branch`. No prefixes or suffixes.
+**Not seeing progress from Mona?** Here's what to check:
+
+### ✅ Branch Name Issues
+- **Problem:** Branch name is incorrect
+- **Solution:** Create a branch named exactly `my-first-branch` (case-sensitive)
+- **Common mistakes:** `My-first-branch`, `my-first-branch-1`, `my_first_branch`
+
+### ✅ Branch Location
+- **Problem:** Branch wasn't created in the right place
+- **Solution:** Make sure you're in your repository (not the Skills template)
+- **How to check:** Look for your username in the repository URL
+
+### ✅ Still on Main Branch
+- **Problem:** Created the branch but still viewing main
+- **Solution:** Click the branch dropdown and select `my-first-branch`
+
+### 🔄 How to Fix
+1. Click the branch dropdown (currently shows "main")
+2. Type exactly: `my-first-branch`
+3. Click "Create branch: my-first-branch from main"
+4. Verify the dropdown now shows `my-first-branch`
+
+**Still stuck?** Check our [detailed troubleshooting guide](.github/ERROR_GUIDE.md) for more help!
+
+### 🔧 Quick Self-Check
+Want to validate your setup? Run this command in your repository:
+```bash
+./.github/scripts/validate-exercise.sh
+```
 
 </details>

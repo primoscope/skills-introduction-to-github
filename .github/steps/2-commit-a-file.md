@@ -45,8 +45,45 @@ The following steps will guide you through the process of committing a change on
 <details>
 <summary>Having trouble? 🤷</summary><br/>
 
-If you don't get feedback, here are some things to check:
-- Make sure you are on the `my-first-branch` branch.
-- Ensure the `PROFILE.md` file is created and in the root folder.
+**Mona not responding?** Here's your troubleshooting checklist:
+
+### ✅ Branch Check
+- **Problem:** Working on wrong branch
+- **Solution:** Switch to `my-first-branch` before creating the file
+- **How to check:** Branch dropdown should show `my-first-branch`, not `main`
+
+### ✅ File Name Issues
+- **Problem:** Incorrect filename
+- **Solution:** File must be named exactly `PROFILE.md` (capital letters, with .md extension)
+- **Common mistakes:** `profile.md`, `Profile.md`, `PROFILE.txt`, `README.md`
+
+### ✅ File Location
+- **Problem:** File created in wrong location
+- **Solution:** File must be in the repository root (not inside any folder)
+- **How to check:** When creating the file, don't include any `/` in the filename
+
+### ✅ Content Issues
+- **Problem:** File is empty or has wrong content
+- **Solution:** Add the exact content: `Welcome to my GitHub profile!`
+
+### ✅ Commit Message
+- **Problem:** Using default or wrong commit message
+- **Solution:** Change commit message to `Add PROFILE.md`
+
+### 🔄 Step-by-Step Fix
+1. Ensure you're on `my-first-branch` (check branch dropdown)
+2. Click "Add file" → "Create new file"
+3. Type filename: `PROFILE.md`
+4. Add content: `Welcome to my GitHub profile!`
+5. Change commit message to: `Add PROFILE.md`
+6. Click "Commit changes"
+
+**Still having issues?** Check our [detailed troubleshooting guide](.github/ERROR_GUIDE.md)!
+
+### 🔧 Quick Self-Check
+Validate your setup automatically:
+```bash
+./.github/scripts/validate-exercise.sh
+```
 
 </details>

@@ -20,6 +20,29 @@
   <img src="https://img.shields.io/badge/Share%20on%20LinkedIn-0077b5?style=for-the-badge&logo=linkedin&logoColor=white" alt="Share on LinkedIn" />
 </a>
 
+## 🔧 Need Help?
+
+**Having trouble with the exercise?** We've got you covered with user-friendly error messages and troubleshooting tools!
+
+### 📋 Troubleshooting Resources
+- **[Comprehensive Error Guide](.github/ERROR_GUIDE.md)** - Detailed solutions for common issues
+- **[Validation Script](.github/scripts/validate-exercise.sh)** - Check your progress automatically
+- **Step-by-step troubleshooting** - Available in each exercise step
+
+### 🚨 Quick Self-Check
+Run this command in your repository to validate your setup:
+```bash
+./.github/scripts/validate-exercise.sh
+```
+
+This tool will check:
+- ✅ Correct branch name (`my-first-branch`)
+- ✅ Proper file location and naming (`PROFILE.md`)
+- ✅ Appropriate commit messages
+- ✅ Remote repository sync
+
+---
+
 ### 🎯 What's Next?
 
 **Keep the momentum going!**

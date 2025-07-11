@@ -39,8 +39,39 @@ To create a pull request automatically, click **Compare & pull request** button,
 <details>
 <summary>Having trouble? 🤷</summary><br/>
 
-If you don't get feedback, here are some things to check:
-- Make sure your pull request title is correct.
-- Ensure your pull request has a description.
+**Pull request not being recognized?** Here's what to verify:
+
+### ✅ Pull Request Title
+- **Problem:** Incorrect title
+- **Solution:** Title must be exactly `Add my first file`
+- **Common mistakes:** `add my first file`, `Add My First File`, `Add first file`
+
+### ✅ Pull Request Description
+- **Problem:** Empty description field
+- **Solution:** Add any description about your changes
+- **Example:** "Added my first PROFILE.md file to learn GitHub basics"
+
+### ✅ Branch Configuration
+- **Problem:** Wrong base or compare branches
+- **Solution:** 
+  - **base:** must be `main`
+  - **compare:** must be `my-first-branch`
+
+### ✅ Pull Request Status
+- **Problem:** Pull request is draft or closed
+- **Solution:** Ensure pull request is open (not draft, not closed)
+
+### ✅ Previous Steps
+- **Problem:** Previous steps not completed
+- **Solution:** Ensure you've successfully completed Steps 1 and 2
+- **How to check:** Look for green checkmarks in previous issue comments
+
+### 🔄 Quick Fix Guide
+1. **For wrong title:** Click "Edit" next to the title and change to `Add my first file`
+2. **For empty description:** Click "Edit" and add any description
+3. **For wrong branches:** Close PR and create new one with correct branches
+4. **For draft status:** Click "Ready for review"
+
+**Need more help?** Check our [detailed troubleshooting guide](.github/ERROR_GUIDE.md)!
 
 </details>
