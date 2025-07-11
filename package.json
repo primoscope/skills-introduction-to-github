@@ -1,0 +1,42 @@
+{
+  "name": "skills-introduction-to-github",
+  "version": "1.0.0",
+  "description": "A GitHub Skills tutorial repository with sample code and comprehensive unit tests",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "lint": "eslint src/ test/",
+    "lint:fix": "eslint src/ test/ --fix"
+  },
+  "keywords": [
+    "github",
+    "tutorial",
+    "testing",
+    "jest",
+    "javascript"
+  ],
+  "author": "GitHub Skills",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "eslint": "^8.57.0"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "collectCoverageFrom": [
+      "src/**/*.js",
+      "!src/index.js"
+    ],
+    "coverageDirectory": "coverage",
+    "coverageReporters": [
+      "text",
+      "lcov",
+      "html"
+    ],
+    "testMatch": [
+      "**/test/**/*.test.js"
+    ]
+  }
+}

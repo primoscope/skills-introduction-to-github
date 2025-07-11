@@ -6,6 +6,25 @@
 
 ### 🌟 You've successfully completed the exercise! 🌟
 
+## 🧪 Sample Code and Unit Testing
+
+This repository now includes a comprehensive example of unit testing best practices! 
+
+📁 **What's included:**
+- **Utility Library**: Mathematical, string, and array manipulation functions
+- **Comprehensive Tests**: 126 test cases with 100% code coverage
+- **CI/CD Pipeline**: Automated testing with GitHub Actions
+- **Code Quality**: ESLint configuration and best practices
+
+🚀 **Getting Started with Testing:**
+```bash
+npm install          # Install dependencies
+npm test            # Run all tests
+npm run test:coverage  # Generate coverage report
+```
+
+📚 **Learn More**: Check out [TESTING.md](./TESTING.md) for detailed testing guide and best practices.
+
 ## 🚀 Share Your Success!
 
 **Show off your new skills and inspire others!**
