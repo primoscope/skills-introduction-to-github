@@ -27,7 +27,39 @@ You successfully created a pull request. Now it's time to merge it!
 <details>
 <summary>Having trouble? 🤷</summary><br/>
 
-If you don't get feedback, here are some things to check:
-- Make sure you completed the previous lessons. If they haven't passed, the merge button will be gray.
+**Merge button grayed out or exercise not completing?** Here's what to check:
+
+### ✅ Previous Steps Status
+- **Problem:** Earlier steps haven't passed
+- **Solution:** All previous steps must complete successfully first
+- **How to check:** Look for green checkmarks (✅) in the issue comments for Steps 1-3
+
+### ✅ Workflow Checks
+- **Problem:** Automated checks are still running
+- **Solution:** Wait for all workflows to complete
+- **How to check:** Look for green checkmarks or spinning icons in the PR
+
+### ✅ Pull Request State
+- **Problem:** Pull request is closed without merging
+- **Solution:** Reopen the pull request or create a new one
+- **Note:** Must click "Merge pull request", not just close
+
+### ✅ Repository Permissions
+- **Problem:** Don't have permission to merge
+- **Solution:** Ensure you're working in your own repository (not the Skills template)
+- **How to check:** Repository URL should include your username
+
+### 🔄 Step-by-Step Fix
+1. **Check previous steps:** Scroll through issue comments for green checkmarks
+2. **Wait for workflows:** Check PR for any running or failing checks  
+3. **Verify PR status:** Ensure PR is open and has "Merge pull request" button
+4. **Complete merge:** Click "Merge pull request" → "Confirm merge" → "Delete branch"
+
+### ⚠️ If Merge Button Is Still Gray
+- Wait 2-3 minutes for workflows to complete
+- Refresh the page
+- Check that previous steps show success in the issue comments
+
+**Still stuck?** Visit our [detailed troubleshooting guide](.github/ERROR_GUIDE.md)!
 
 </details>

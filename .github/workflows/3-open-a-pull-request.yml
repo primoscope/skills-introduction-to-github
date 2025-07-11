@@ -83,13 +83,25 @@ jobs:
         continue-on-error: true
         run: |
           if [ -n "$PR_BODY" ]; then
-            echo "STEP_MESSAGE=Pull request description" >> $GITHUB_OUTPUT
+            echo "STEP_MESSAGE=Pull request description provided ✅" >> $GITHUB_OUTPUT
           else
-            echo "STEP_MESSAGE=Pull request description is empty" >> $GITHUB_OUTPUT
+            echo "STEP_MESSAGE=❌ Pull request description is empty - please add a description explaining your changes" >> $GITHUB_OUTPUT
             exit 1
           fi
         env:
           PR_BODY: ${{ github.event.pull_request.body }}
+
+      - name: Generate helpful error message for title
+        id: title-error-message
+        if: steps.check-pr-title.outcome == 'failure'
+        run: |
+          echo "TITLE_ERROR_MSG=❌ Pull request title should be exactly 'Add my first file' (current: '${{ github.event.pull_request.title }}')" >> $GITHUB_OUTPUT
+
+      - name: Generate success message for title  
+        id: title-success-message
+        if: steps.check-pr-title.outcome == 'success'
+        run: |
+          echo "TITLE_SUCCESS_MSG=✅ Pull request title matches expected format" >> $GITHUB_OUTPUT
 
       - name: Update comment - step results
         uses: GrantBirki/comment@v2.1.1
@@ -102,7 +114,7 @@ jobs:
           vars: |
             step_number: 3
             results_table:
-              - description: "Pull Request title matches"
+              - description: ${{ steps.check-pr-title.outcome == 'success' && steps.title-success-message.outputs.TITLE_SUCCESS_MSG || steps.title-error-message.outputs.TITLE_ERROR_MSG }}
                 passed: ${{ steps.check-pr-title.outcome == 'success' }}
               - description: ${{ steps.check-pr-description.outputs.STEP_MESSAGE }}
                 passed: ${{ steps.check-pr-description.outcome == 'success' }}
@@ -110,6 +122,30 @@ jobs:
       - name: Fail job if not all checks passed
         if: contains(steps.*.outcome, 'failure')
         run: exit 1
+
+      - name: Add helpful guidance comment on failure
+        if: failure()
+        uses: GrantBirki/comment@v2.1.1
+        with:
+          repository: ${{ env.ISSUE_REPOSITORY }}
+          issue-number: ${{ env.ISSUE_NUMBER }}
+          body: |
+            ## 🚨 Step 3 needs attention
+
+            Don't worry! Here's how to fix the issues and continue:
+
+            ### Quick Fixes:
+            
+            ${{ steps.check-pr-title.outcome == 'failure' && '❌ **Pull Request Title:** Change your PR title to exactly `Add my first file`' || '' }}
+            
+            ${{ steps.check-pr-description.outcome == 'failure' && '❌ **Pull Request Description:** Add a description explaining what you changed (e.g., "Added my first PROFILE.md file")' || '' }}
+
+            ### How to Fix:
+            1. Click the "Edit" button next to your pull request title/description
+            2. Make the necessary changes
+            3. The workflow will automatically re-check your changes
+
+            Need more help? Check the [troubleshooting guide](.github/ERROR_GUIDE.md) for detailed instructions!
 
   post_next_step_content:
     name: Post next step content
